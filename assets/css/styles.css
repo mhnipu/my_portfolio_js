@@ -25,10 +25,12 @@
   --text-color: hsl(var(--hue), 2%, 66%);
   --body-color: hsl(var(--hue), 100%, 1%);
   --container-color: hsl(var(--hue), 2%, 10%);
-  --conic-gradient: conic-gradient(from 150deg at 50% 45%,
-                  hsl(var(--hue), 80%, 20%) 0deg,
-                  hsl(var(--hue), 80%, 48%) 140deg,
-                  hsl(var(--hue), 80%, 20%) 360deg);
+  --conic-gradient: conic-gradient(
+    from 150deg at 50% 45%,
+    hsl(var(--hue), 80%, 20%) 0deg,
+    hsl(var(--hue), 80%, 48%) 140deg,
+    hsl(var(--hue), 80%, 20%) 360deg
+  );
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -38,9 +40,9 @@
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
 
   /*========== Font weight ==========*/
   --font-regular: 400;
@@ -60,8 +62,8 @@
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
   }
 }
 
@@ -80,8 +82,8 @@ body,
 input,
 textarea,
 button {
-font-family: var(--body-font);
-font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
 }
 
 body {
@@ -96,7 +98,10 @@ textarea {
   outline: none;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--white-color);
   font-weight: var(--font-semi-bold);
 }
@@ -146,38 +151,37 @@ img {
   bottom: 1.5rem;
   left: 0;
   right: 0;
-  background-color: hsla(0, 0%, 98%, .1);
+  background-color: hsla(0, 0%, 98%, 0.1);
   width: 88%;
   margin-inline: auto;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 1rem 2rem;
-  border-radius:4rem;
-  z-index: var(--z-fixed); 
+  border-radius: 4rem;
+  z-index: var(--z-fixed);
 }
 
-.nav__list{
+.nav__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.nav__link{
+.nav__link {
   width: 2.5rem;
   height: 2.5rem;
   background-color: transparent;
   color: var(--white-color);
-  font-style: 1.5rem;
+  font-size: 1.5rem;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  transition: background-color .6s;
+  transition: background-color 0.6s;
 }
 /* Active link */
 
-
 /*=============== HOME ===============*/
 /*===== PERFIL =====*/
-.perfil{
+.perfil {
   position: relative;
   background: var(--conic-gradient);
   height: 415px;
@@ -186,45 +190,146 @@ img {
   display: grid;
   overflow: hidden;
 }
-.perfil__img{
+.perfil__img {
   width: 250px;
   position: absolute;
   justify-self: center;
   align-self: flex-end;
 }
-.perfil__data{
+.perfil__data {
   align-self: flex-end;
-  background-color: hsla(0, 0%, 1%, .1);
+  background-color: hsla(0, 0%, 1%, 0.1);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 1.5em 1rem;
   border-radius: 1.5rem;
-  border: 2px solid hsla(0, 0%, 100%, .5);
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
 }
-.perfil__name{
+.perfil__name {
   font: var(--font-regular) var(--biggest-font-size) var(--second-font);
   margin-bottom: 1rem;
 }
-.perfil__buttons{
+.perfil__buttons {
   display: grid;
-  column-gap: .5rem;
-  grid-template-columns: repeat(2,1fr);
+  column-gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
 }
-.perfil__buttons .button{
-  padding:.75rem 0;
+.perfil__buttons .button {
+  padding: 0.75rem 0;
 }
 /*===== INFO =====*/
-
-
+.info,
+.about,
+.skills {
+  background-color: var(--container-color);
+  padding: 2rem 1.5rem;
+  border-radius: 2rem;
+}
+.info__circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+.info__name {
+  font: var(--font-regular) var(--h1-font-size) var(--second-font);
+}
+.info__data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.info__image {
+  background: var(--conic-gradient);
+  height: 180px;
+  border-radius: 2rem;
+  display: grid;
+  margin-block: 1.5rem;
+  overflow: hidden;
+}
+.info__img {
+  width: 140px;
+  justify-self: center;
+  align-self: flex-end;
+}
+.info__description {
+  font-size: var(--small-font-size);
+  margin-bottom: 2rem;
+}
+.info .button {
+  width: 100%;
+}
 /*===== ABOUT =====*/
-
-
+.about__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-regular);
+  margin-bottom: 1rem;
+}
+.about__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.5rem;
+  margin-block: 2rem;
+}
+.about__link {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background-color 0.4s, color 0.4s;
+}
+.about__link:hover {
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+.about__image {
+  background: var(--conic-gradient);
+  height: 180px;
+  border-radius: 2rem;
+  display: grid;
+  overflow: hidden;
+}
+.about__img {
+  width: 250px;
+  justify-self: center;
+  transform: translateY(-2.5rem);
+}
+.about__note {
+  font-size: var(--small-font-size);
+  margin-block: 1rem 2rem;
+}
+.about .button {
+  width: 100%;
+}
 /*===== SKILLS =====*/
-
-
+.skills__title {
+  font-size: var(--h2-font-size);
+}
+.skills__item {
+  width: 1.5rem;
+  transition: transform 0.4s;
+}
+.skills__item:hover {
+  transform: translateY(-0.5rem);
+}
+.skills__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-block: 1.5rem;
+}
+.skills__description {
+  font-size: var(--small-font-size);
+}
 /*=============== BUTTON ===============*/
 
-.button{
+.button {
   display: inline-flex;
   justify-content: center;
   background-color: var(--first-color);
@@ -232,44 +337,33 @@ img {
   font-weight: var(--font-semi-bold);
   padding: 1.25rem 2.5rem;
   border-radius: 4rem;
-  transition: background-color .4s;
+  transition: background-color 0.4s;
 }
-.button__black{
-  background-color: var(--black-color)
+.button__black {
+  background-color: var(--black-color);
 }
-.button:hover{
+.button:hover {
   background-color: var(--first-color-alt);
-
 }
 /*=============== PROJECTS ===============*/
 
-
 /*=============== SERVICES ===============*/
-
 
 /*=============== EXPERIENCE ===============*/
 
-
 /*=============== CONTACT ===============*/
-
 
 /*=============== FOOTER ===============*/
 
-
 /*=============== SCROLL BAR ===============*/
-
 
 /*=============== SCROLL UP ===============*/
 
-
 /* Show Scroll Up */
-
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 
-
 /* For medium devices */
-
 
 /* For large devices */
